@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1.on {
+            color: tomato
+        }
+
+        .btn.on {
+            background: tomato;
+        }
+
+        .tab>div {
+            display: none;
+        }
+
+        .tab>div.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit.</h1>
+    <button class="btn">click</button>
+    <ul class="ul">
+        <li><a href="">menu01</a></li>
+        <li><a href="">menu02</a></li>
+        <li><a href="">menu03</a></li>
+        <li><a href="">menu04</a></li>
+        <li><a href="">menu05</a></li>
+    </ul>
+    <div class="tab">
+        <div class="on">01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+    </div>
+    <script>
+        const H1 = document.querySelector('h1');
+        const BTN = document.querySelector('.btn');
+        const UL = document.querySelector('.ul');
+        const LI = document.querySelectorAll('.ul>li');
+        const TAB = document.querySelectorAll('.tab>div');
+        console.log(LI, LI.length, LI[1], [...LI]);
+        //$('.btn').on('click', function(){
+        // $('h1').hide() //$(this) $('li').addClass()
+        //})
+
+        // ecma6 2015 () => 
+        BTN.addEventListener('click', (e) => {
+            e.currentTarget.classList.toggle('on');
+            H1.classList.toggle('on');
+            LI[1].classList.add('on')
+        });
+
+        // LI.addEventListener('click', function () {
+        //     console.log(this)
+        // })
+
+        LI.forEach((el, idx) => {
+            el.addEventListener('click', event => {
+                event.preventDefault();
+                console.log(el, idx, event);
+                TAB.forEach(el => el.classList.remove('on'))
+                TAB[idx].classList.add('on');
+            })
+        })
+    </script>
+</body>
+
+</html>

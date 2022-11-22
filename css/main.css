@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+:root {
+    --mc: #ff6347;
+    --wc: #f9f9f9;
+    --dc: #444444;
+    --gc: #dddddd;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 1.6rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    background: rgba(0, 0, 0, 0.75);
+    color: var(--wc);
+    line-height: 10rem;
+}
+
+.header h1 {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+}
+
+.header .gnb {
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .gnb>ul>li>a {
+    display: block;
+    font-size: 2rem;
+}
+
+.header .gnb>ul>li .smenu {
+    position: absolute;
+    top: 7rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    line-height: 3rem;
+    background: var(--wc);
+    color: var(--dc);
+
+    font-size: 1.4rem;
+    border: 3px solid var(--mc);
+    text-align: center;
+
+    width: 12rem;
+
+    display: none;
+}
+
+.header .gnb>ul>li:hover .smenu {
+    display: block;
+}
+
+.header .gnb>ul>li .smenu li~li {
+    border-top: 1px solid var(--gc);
+}
+
+.header .right {
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.mainVisual .itm {
+    height: 100vh;
+}
+
+.mainVisual .itm01 {
+    background: url(../images/bg_intro01.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .itm02 {
+    background: url(../images/bg_intro02.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .itm03 {
+    background: url(../images/bg_intro03.jpg) no-repeat center center/cover;
+}
+
+.mopen {
+    display: none;
+}
